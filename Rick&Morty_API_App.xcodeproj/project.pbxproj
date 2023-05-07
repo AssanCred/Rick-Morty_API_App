@@ -13,6 +13,7 @@
 		88C51B292A0801390094E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B272A0801390094E05E /* Main.storyboard */; };
 		88C51B2B2A08013A0094E05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B2A2A08013A0094E05E /* Assets.xcassets */; };
 		88C51B2E2A08013A0094E05E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B2C2A08013A0094E05E /* LaunchScreen.storyboard */; };
+		88C51B3B2A08019C0094E05E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B3A2A08019C0094E05E /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		88C51B2A2A08013A0094E05E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C51B2D2A08013A0094E05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C51B2F2A08013A0094E05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C51B3A2A08019C0094E05E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		88C51B202A0801390094E05E /* Rick&Morty_API_App */ = {
 			isa = PBXGroup;
 			children = (
-				88C51B212A0801390094E05E /* AppDelegate.swift */,
-				88C51B232A0801390094E05E /* SceneDelegate.swift */,
-				88C51B252A0801390094E05E /* ViewController.swift */,
-				88C51B272A0801390094E05E /* Main.storyboard */,
+				88C51B382A0801660094E05E /* Models */,
+				88C51B352A0801450094E05E /* App */,
+				88C51B362A08014A0094E05E /* ViewControllers */,
+				88C51B372A0801570094E05E /* Storyboards */,
 				88C51B2A2A08013A0094E05E /* Assets.xcassets */,
-				88C51B2C2A08013A0094E05E /* LaunchScreen.storyboard */,
-				88C51B2F2A08013A0094E05E /* Info.plist */,
 			);
 			path = "Rick&Morty_API_App";
+			sourceTree = "<group>";
+		};
+		88C51B352A0801450094E05E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				88C51B212A0801390094E05E /* AppDelegate.swift */,
+				88C51B232A0801390094E05E /* SceneDelegate.swift */,
+				88C51B2F2A08013A0094E05E /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		88C51B362A08014A0094E05E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88C51B252A0801390094E05E /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88C51B372A0801570094E05E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				88C51B272A0801390094E05E /* Main.storyboard */,
+				88C51B2C2A08013A0094E05E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		88C51B382A0801660094E05E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88C51B3A2A08019C0094E05E /* Character.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +176,7 @@
 				88C51B262A0801390094E05E /* ViewController.swift in Sources */,
 				88C51B222A0801390094E05E /* AppDelegate.swift in Sources */,
 				88C51B242A0801390094E05E /* SceneDelegate.swift in Sources */,
+				88C51B3B2A08019C0094E05E /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K4NPPTUJ49;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rick&Morty_API_App/Info.plist";
+				INFOPLIST_FILE = "Rick&Morty_API_App/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K4NPPTUJ49;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rick&Morty_API_App/Info.plist";
+				INFOPLIST_FILE = "Rick&Morty_API_App/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
