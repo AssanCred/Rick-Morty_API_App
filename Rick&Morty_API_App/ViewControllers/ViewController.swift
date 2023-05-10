@@ -9,31 +9,32 @@ import UIKit
 
 final class ViewController: UIViewController {
 
+    @IBOutlet var imageView: UIImageView!
+    
+    private let networkManager = NetworkManager.shared
+    private let character: [Character] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCharacter()
+        fetchCourse()
     }
     
-    private func fetchCharacter() {
-        let urlString = "https://rickandmortyapi.com/api/character"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
+    private func fetchCourse() {
+        networkManager.fetchCharacter(from: Link.characterLink.url) { result in
+            switch result {
+            case .success(let character):
+                print(character)
+            case .failure(let error):
+                print(error)
             }
-            
-            do {
-                let decoder = JSONDecoder()
-                let CharacterListResponse = try decoder.decode(CharacterListResponse.self, from: data)
-                print(CharacterListResponse)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        }
+    }
+//
+//    private func fetchImage() {
+//        networkManager.fetchImage(from: character.) { <#Data#> in
+//            <#code#>
+//        }
+
     }
 
-
-}
 
