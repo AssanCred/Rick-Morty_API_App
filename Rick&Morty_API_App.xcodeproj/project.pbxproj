@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		88C51B222A0801390094E05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B212A0801390094E05E /* AppDelegate.swift */; };
 		88C51B242A0801390094E05E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B232A0801390094E05E /* SceneDelegate.swift */; };
-		88C51B262A0801390094E05E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B252A0801390094E05E /* ViewController.swift */; };
 		88C51B292A0801390094E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B272A0801390094E05E /* Main.storyboard */; };
 		88C51B2B2A08013A0094E05E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B2A2A08013A0094E05E /* Assets.xcassets */; };
 		88C51B2E2A08013A0094E05E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B2C2A08013A0094E05E /* LaunchScreen.storyboard */; };
 		88C51B3B2A08019C0094E05E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B3A2A08019C0094E05E /* Character.swift */; };
 		88CD8B292A0BB949006A108A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD8B282A0BB949006A108A /* NetworkManager.swift */; };
+		88CD8B2B2A0C9122006A108A /* CharacterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD8B2A2A0C9122006A108A /* CharacterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		88C51B1E2A0801390094E05E /* Rick&Morty_API_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty_API_App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C51B212A0801390094E05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C51B232A0801390094E05E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88C51B252A0801390094E05E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88C51B282A0801390094E05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88C51B2A2A08013A0094E05E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C51B2D2A08013A0094E05E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C51B2F2A08013A0094E05E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88C51B3A2A08019C0094E05E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		88CD8B282A0BB949006A108A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		88CD8B2A2A0C9122006A108A /* CharacterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterTableViewController.swift; path = "Rick&Morty_API_App/Storyboards/CharacterTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		88C51B362A08014A0094E05E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				88C51B252A0801390094E05E /* ViewController.swift */,
+				88CD8B2A2A0C9122006A108A /* CharacterTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88C51B262A0801390094E05E /* ViewController.swift in Sources */,
+				88CD8B2B2A0C9122006A108A /* CharacterTableViewController.swift in Sources */,
 				88C51B222A0801390094E05E /* AppDelegate.swift in Sources */,
 				88CD8B292A0BB949006A108A /* NetworkManager.swift in Sources */,
 				88C51B242A0801390094E05E /* SceneDelegate.swift in Sources */,
