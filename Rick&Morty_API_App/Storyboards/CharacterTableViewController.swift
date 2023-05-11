@@ -19,10 +19,7 @@ class CharacterTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         persons.count
     }
     
@@ -31,6 +28,7 @@ class CharacterTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let person = persons[indexPath.row]
         content.text = person.name
+        content.secondaryText = person.gender
         cell.contentConfiguration = content
         
         return cell
@@ -40,10 +38,10 @@ class CharacterTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
+   // }
 
 }
 
@@ -55,6 +53,7 @@ extension CharacterTableViewController {
             switch result {
             case .success(let character):
                 self.persons = character.results
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
