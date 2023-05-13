@@ -10,7 +10,7 @@ import UIKit
 class CharacterTableViewController: UITableViewController {
     
     private let networkManager = NetworkManager.shared
-    private var persons: [Character] = []
+    private var characters: [Character] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,20 +20,16 @@ class CharacterTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        persons.count
+        characters.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCharacter", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        let person = persons[indexPath.row]
-        content.text = person.name
-        content.secondaryText = person.gender
-        cell.contentConfiguration = content
-        
+        guard let cell = cell as? CharacterViewCell else  { return UITableViewCell() }
+        let character = characters[indexPath.row]
+        cell.configure(with: character)
         return cell
     }
-
 
     // MARK: - Navigation
 
@@ -52,7 +48,7 @@ extension CharacterTableViewController {
         networkManager.fetchCharacter(from: Link.characterLink.url) { result in
             switch result {
             case .success(let character):
-                self.persons = character.results
+                self.characters = character.results
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)

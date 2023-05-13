@@ -8,7 +8,6 @@
 import Foundation
 
 struct CharacterListResponse: Decodable {
-    let info: Info
     let results: [Character]
 }
 
@@ -20,10 +19,17 @@ struct Character: Decodable {
     let type: String
     let gender: String
     let origin, location: Location
-    let image: String
+    let image: URL
     let episode: [String]
     let url: String
     let created: String
+    
+    var description: String {
+        """
+        Тип: \(type)
+        Гендер: \(gender)
+        """
+    }
 }
 
 struct Location: Decodable {
@@ -31,11 +37,5 @@ struct Location: Decodable {
     let url: String
 }
 
-struct Info: Decodable {
-    let count: Int
-    let pages: Int
-    let next: String?
-    let prev: String?
-}
 
 
