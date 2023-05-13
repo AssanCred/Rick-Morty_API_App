@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8860FE3E2A0FA23600163397 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8860FE3D2A0FA23600163397 /* CharacterDetailsViewController.swift */; };
 		88C51B222A0801390094E05E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B212A0801390094E05E /* AppDelegate.swift */; };
 		88C51B242A0801390094E05E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C51B232A0801390094E05E /* SceneDelegate.swift */; };
 		88C51B292A0801390094E05E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C51B272A0801390094E05E /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8860FE3D2A0FA23600163397 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		88C51B1E2A0801390094E05E /* Rick&Morty_API_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty_API_App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C51B212A0801390094E05E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C51B232A0801390094E05E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				88CD8B2A2A0C9122006A108A /* CharacterTableViewController.swift */,
+				8860FE3D2A0FA23600163397 /* CharacterDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8860FE3E2A0FA23600163397 /* CharacterDetailsViewController.swift in Sources */,
 				88CD8B302A0CD72D006A108A /* CharacterViewCell.swift in Sources */,
 				88CD8B2B2A0C9122006A108A /* CharacterTableViewController.swift in Sources */,
 				88C51B222A0801390094E05E /* AppDelegate.swift in Sources */,

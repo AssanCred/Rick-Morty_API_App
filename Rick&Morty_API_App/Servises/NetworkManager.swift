@@ -49,11 +49,14 @@ final class NetworkManager {
         }.resume()
     }
     
-    func fetchImage(from url: URL, completion: @escaping (Data) -> Void) {
+    func fetchImage(from url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else { return }
+            guard let imageData = try? Data(contentsOf: url) else {
+                completion(.failure(.noData))
+                return
+            }
             DispatchQueue.main.async {
-                completion(imageData)
+                completion(.success(imageData))
             }
         }
     }

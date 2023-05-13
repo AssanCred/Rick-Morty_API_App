@@ -24,10 +24,15 @@ struct Character: Decodable {
     let url: String
     let created: String
     
-    var description: String {
+    var detailsInfo: String {
         """
-        Тип: \(type)
-        Гендер: \(gender)
+        Name: \(name)
+        Gender: \(gender)
+        Type: \(type)
+        Status: \(status)
+        Created: \(created)
+        Origin: \(origin.name)
+        Location: \(location.name)
         """
     }
 }
