@@ -7,23 +7,6 @@
 
 import Foundation
 
-enum Link {
-    case characterLink
-    
-    var url: URL {
-        switch self {
-        case .characterLink:
-            return URL(string: "https://rickandmortyapi.com/api/character")!
-        }
-    }
-}
-
-enum NetworkError: Error {
-    case invalidURL
-    case noData
-    case decodingError
-}
-
 final class NetworkManager {
     static let shared = NetworkManager()
         
@@ -60,4 +43,21 @@ final class NetworkManager {
             }
         }
     }
+}
+
+enum Link {
+    case characterLink
+    
+    var url: URL {
+        switch self {
+        case .characterLink:
+            return URL(string: "https://rickandmortyapi.com/api/character")!
+        }
+    }
+}
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
 }

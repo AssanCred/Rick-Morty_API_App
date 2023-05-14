@@ -8,15 +8,19 @@
 import UIKit
 
 class CharacterDetailsViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet var pictureImageView: UIImageView!
     @IBOutlet var detailsInfoLabel: UILabel!
     
+    // MARK: - Public Proporties
     var character: Character!
     
+    // MARK: - Private Properties
     private let networkManager = NetworkManager.shared
     private var spinnerView = UIActivityIndicatorView()
     
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsInfoLabel.text = character.detailsInfo
@@ -25,6 +29,7 @@ class CharacterDetailsViewController: UIViewController {
         fetchImage()
     }
     
+    // MARK: - Private Methods
     private func showSpinner(in view: UIView) {
         spinnerView = UIActivityIndicatorView(style: .large)
         spinnerView.color = .white
@@ -34,17 +39,15 @@ class CharacterDetailsViewController: UIViewController {
         view.addSubview(spinnerView)
     }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }
 
 // MARK: - Networking

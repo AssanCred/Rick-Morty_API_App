@@ -8,7 +8,8 @@
 import UIKit
 
 class CharacterViewCell: UITableViewCell {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet var pictureImageView: UIImageView! {
         didSet {
             pictureImageView.layer.cornerRadius = pictureImageView.frame.height / 2
@@ -24,6 +25,7 @@ class CharacterViewCell: UITableViewCell {
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
     
+    // MARK: - Public Methods
     func configure(with character: Character) {
         nameLabel.text = "Name: \(character.name)"
         genderLabel.text = "Gender: \(character.gender)"

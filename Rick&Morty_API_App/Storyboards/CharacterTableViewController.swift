@@ -9,15 +9,17 @@ import UIKit
 
 class CharacterTableViewController: UITableViewController {
     
+    // MARK: - Private Properties
     private let networkManager = NetworkManager.shared
     private var characters: [Character] = []
-
+    
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
         fetchCourse()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         characters.count
@@ -30,14 +32,12 @@ class CharacterTableViewController: UITableViewController {
         cell.configure(with: character)
         return cell
     }
-
+    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailsVC = segue.destination as? CharacterDetailsViewController
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         detailsVC?.character = characters[indexPath.row]
-        
     }
 }
 
