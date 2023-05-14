@@ -17,7 +17,7 @@ class CharacterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
-        fetchCourse()
+        fetchCharacters()
     }
     
     // MARK: - Table view data source
@@ -44,14 +44,14 @@ class CharacterTableViewController: UITableViewController {
 // MARK: - Networking
 extension CharacterTableViewController {
     
-    private func fetchCourse() {
-        networkManager.fetchCharacter(from: Link.characterLink.url) { result in
+    private func fetchCharacters() {
+        networkManager.fetchCharacters(from: Link.characterLink.url) { [weak self ] result in
             switch result {
-            case .success(let character):
-                self.characters = character.results
-                self.tableView.reloadData()
+            case .success(let characters):
+                self?.characters = characters
+                self?.tableView.reloadData()
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }

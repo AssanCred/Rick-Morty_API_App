@@ -25,17 +25,21 @@ class CharacterViewCell: UITableViewCell {
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
     
+    private let networkManager = NetworkManager.shared
+    
     // MARK: - Public Methods
     func configure(with character: Character) {
         nameLabel.text = "Name: \(character.name)"
         genderLabel.text = "Gender: \(character.gender)"
         statusLabel.text = "Status: \(character.status)"
         
-        DispatchQueue.global().async { [weak self] in
-            guard let imageData = try? Data(contentsOf: character.image) else { return }
-            DispatchQueue.main.async {
+        networkManager.fetchData(from: character.image) { [weak self] result in
+            switch result {
+            case .success(let imageData):
                 self?.pictureImageView.image = UIImage(data: imageData)
                 self?.loadActivityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

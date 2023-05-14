@@ -38,29 +38,18 @@ class CharacterDetailsViewController: UIViewController {
         spinnerView.hidesWhenStopped = true
         view.addSubview(spinnerView)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
 
 // MARK: - Networking
 extension CharacterDetailsViewController {
-    
     private func fetchImage() {
-        networkManager.fetchImage(from: character.image) { [weak self] result in
+        networkManager.fetchData(from: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.pictureImageView.image = UIImage(data: imageData)
                 self?.spinnerView.stopAnimating()
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }
