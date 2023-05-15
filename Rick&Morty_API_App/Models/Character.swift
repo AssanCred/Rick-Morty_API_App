@@ -53,8 +53,9 @@ struct Character: Decodable {
     }
     
     static func getCharacter(from value: Any) -> [Character] {
-        guard let characterListResponseData = (value as? [String: Any])?["results"] as? [Any] else { return [] }
-        guard let charactersData = characterListResponseData as? [[String: Any]] else { return [] }
+        guard let characterListResponseData = value as? [String: Any] else { return [] }
+        guard let results = characterListResponseData["results"] as? [Any] else { return [] }
+        guard let charactersData = results as? [[String: Any]] else { return [] }
         
         return charactersData.map { Character(from: $0) }
     }
